@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arcens IA — Conseil en intelligence artificielle pour dirigeants de TPE et PME</title>
+<meta name="description" content="Arcens IA accompagne les dirigeants de TPE et PME avec des solutions IA concrètes : assistant sur-mesure, sites et applications, automatisations, formation." />
+<!--
+  À COMPLÉTER AVANT MISE EN LIGNE :
+  1. Email de contact : remplacer contact@arcens-ia.fr (2 occurrences : section contact + footer)
+  2. Formulaire : créer un compte gratuit sur https://formspree.io, créer un formulaire,
+     remplacer VOTRE_ID_FORMSPREE dans l'attribut action du <form> par l'identifiant fourni
+  3. Lien LinkedIn dans le footer (actuellement "#")
+  4. Mentions légales dans le footer une fois le SIRET/immatriculation obtenu
+-->
+<style>
+  :root {
+    --ink-900: #10181f;
+    --ink-700: #2e3e48;
+    --ink-500: #5b6b74;
+    --paper-000: #f7f9f8;
+    --paper-050: #eef1ef;
+    --paper-100: #e1e6e3;
+    --accent: #b8823d;
+    --accent-soft: #d9b77b;
+
+    --bg: var(--paper-000);
+    --surface: var(--paper-050);
+    --surface-alt: var(--paper-100);
+    --text: var(--ink-900);
+    --text-soft: var(--ink-700);
+    --text-muted: var(--ink-500);
+    --border: rgba(16, 24, 31, 0.16);
+    --accent-c: var(--accent);
+    --accent-c-soft: var(--accent-soft);
+    --on-accent: #10181f;
+    --shadow: rgba(16, 24, 31, 0.10);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10181f;
+      --surface: #182530;
+      --surface-alt: #1f2e3a;
+      --text: #eef1ef;
+      --text-soft: #c3cbc8;
+      --text-muted: #8ca0a8;
+      --border: rgba(238, 241, 239, 0.16);
+      --accent-c: #d9a653;
+      --accent-c-soft: #e9c687;
+      --on-accent: #10181f;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #10181f;
+    --surface: #182530;
+    --surface-alt: #1f2e3a;
+    --text: #eef1ef;
+    --text-soft: #c3cbc8;
+    --text-muted: #8ca0a8;
+    --border: rgba(238, 241, 239, 0.16);
+    --accent-c: #d9a653;
+    --accent-c-soft: #e9c687;
+    --on-accent: #10181f;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  h1, h2, h3 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-weight: 600;
+    text-wrap: balance;
+    color: var(--text);
+    margin: 0;
+  }
+
+  h1 { font-size: clamp(2.25rem, 1.5rem + 3vw, 3.75rem); line-height: 1.08; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.25rem); line-height: 1.15; }
+  h3 { font-size: clamp(1.15rem, 1rem + 0.6vw, 1.375rem); line-height: 1.25; }
+
+  p { margin: 0; color: var(--text-soft); }
+
+  .eyebrow {
+    font-family: "Cascadia Mono", "SF Mono", Consolas, "Courier New", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-c);
+    display: inline-block;
+  }
+
+  a { color: inherit; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.75rem 1.4rem;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--accent-c);
+    color: var(--on-accent);
+    border-color: var(--accent-c);
+  }
+  .btn-primary:hover { background: var(--accent-c-soft); border-color: var(--accent-c-soft); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--accent-c); color: var(--accent-c); }
+  .btn:focus-visible {
+    outline: 2px solid var(--accent-c);
+    outline-offset: 2px;
+  }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+  .wordmark {
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .wordmark span { color: var(--accent-c); }
+  .nav-links {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--accent-c); }
+  @media (max-width: 42rem) {
+    .nav-links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    padding-block: clamp(3rem, 8vw, 6rem) clamp(2.5rem, 6vw, 4rem);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  @media (max-width: 56rem) {
+    .hero { grid-template-columns: 1fr; }
+  }
+  .hero-eyebrow { margin-bottom: 1.25rem; }
+  .hero h1 { margin-bottom: 1.25rem; }
+  .hero-sub {
+    font-size: 1.1rem;
+    max-width: 34rem;
+    margin-bottom: 2rem;
+  }
+  .hero-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+  .hero-figure { position: relative; }
+  .hero-figure svg { width: 100%; height: auto; display: block; }
+  .arc-path {
+    fill: none;
+    stroke: var(--accent-c);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 480;
+    stroke-dashoffset: 480;
+    animation: draw-arc 1.4s 0.2s ease forwards;
+  }
+  .arc-dot {
+    fill: var(--accent-c);
+    opacity: 0;
+    animation: fade-in 0.4s 1.5s ease forwards;
+  }
+  .arc-grid line { stroke: var(--border); stroke-width: 1; }
+  @keyframes draw-arc { to { stroke-dashoffset: 0; } }
+  @keyframes fade-in { to { opacity: 1; } }
+
+  /* Sections */
+  .section { padding-block: clamp(3rem, 6vw, 4.5rem); border-top: 1px solid var(--border); }
+  .section-head { max-width: 40rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .section-head .eyebrow { margin-bottom: 0.75rem; }
+  .section-head p { margin-top: 1rem; font-size: 1.05rem; }
+  .section-alt { background: var(--surface); }
+
+  /* Problem */
+  .problem-body { max-width: 42rem; font-size: 1.05rem; }
+  .problem-body p + p { margin-top: 1rem; }
+
+  /* Offers */
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 42rem) { .offers-grid { grid-template-columns: 1fr; } }
+  .offer-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: border-color 0.15s ease;
+  }
+  .offer-card:hover { border-color: var(--accent-c); }
+  .offer-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .offer-code {
+    font-family: "Cascadia Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.5rem;
+  }
+  .offer-price {
+    font-family: "Cascadia Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--accent-c);
+    white-space: nowrap;
+  }
+  .offer-card p { font-size: 0.96rem; }
+
+  /* Method */
+  .method-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    counter-reset: step;
+  }
+  @media (max-width: 56rem) { .method-list { grid-template-columns: 1fr; } }
+  .method-step { padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .method-num {
+    font-family: "Cascadia Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.85rem;
+    color: var(--accent-c);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+  .method-step h3 { margin-bottom: 0.5rem; }
+  .method-step p { font-size: 0.95rem; }
+
+  /* Proof */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 42rem) { .proof-grid { grid-template-columns: 1fr; } }
+  .proof-card {
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .proof-card .eyebrow { margin-bottom: 0.6rem; }
+  .proof-card h3 { margin-bottom: 0.6rem; }
+  .proof-card p { font-size: 0.96rem; }
+  .proof-link {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-size: 0.85rem;
+    color: var(--accent-c);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-c);
+  }
+  .proof-status {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-family: "Cascadia Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 56rem) { .pricing-grid { grid-template-columns: 1fr; } }
+  .price-tier {
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .price-tier.is-featured { border-color: var(--accent-c); background: var(--surface); }
+  .price-tier .eyebrow { margin-bottom: 0.35rem; }
+  .price-amount {
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-size: 1.6rem;
+    color: var(--text);
+    margin: 0.35rem 0 0.6rem;
+  }
+  .price-tier p { font-size: 0.92rem; }
+  .pricing-note { margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted); max-width: 38rem; }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  @media (max-width: 56rem) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info p { margin-top: 1rem; font-size: 0.98rem; }
+  .contact-direct {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .contact-direct a { color: var(--accent-c); text-decoration: none; border-bottom: 1px solid var(--accent-c); }
+
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 30rem) { .form-row { grid-template-columns: 1fr; } }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field label {
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 0.98rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.65rem 0.75rem;
+  }
+  .form-field textarea { resize: vertical; min-height: 6rem; }
+  .form-field input:focus-visible,
+  .form-field select:focus-visible,
+  .form-field textarea:focus-visible {
+    outline: 2px solid var(--accent-c);
+    outline-offset: 1px;
+  }
+  .form-submit { display: flex; align-items: center; gap: 1rem; margin-top: 0.25rem; }
+  .form-status { font-size: 0.88rem; }
+  .form-status[data-state="ok"] { color: #4f8f5b; }
+  .form-status[data-state="error"] { color: #b3543f; }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--border); padding-block: 2.5rem; }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .footer-links { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  .footer-links a { text-decoration: none; color: var(--text-muted); }
+  .footer-links a:hover { color: var(--accent-c); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="wordmark">ARCENS<span>·</span>IA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#offres">Offres</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#references">Références</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary">Audit découverte</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <div>
+      <span class="eyebrow hero-eyebrow">Arcens IA — Conseil en intelligence artificielle</span>
+      <h1>Une trajectoire claire, pas un buzzword.</h1>
+      <p class="hero-sub">
+        J'aide les dirigeants de TPE et PME à faire de l'IA un outil concret&nbsp;: moins de tâches
+        répétitives, des réponses clients plus rapides, plus de temps pour diriger. Pas de jargon,
+        des livrables qui tournent dès la première semaine.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Réserver un audit découverte</a>
+        <a href="#offres" class="btn btn-ghost">Voir les prestations</a>
+      </div>
+    </div>
+    <div class="hero-figure" aria-hidden="true">
+      <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+        <g class="arc-grid">
+          <line x1="0" y1="60" x2="400" y2="60" />
+          <line x1="0" y1="130" x2="400" y2="130" />
+          <line x1="0" y1="200" x2="400" y2="200" />
+        </g>
+        <path class="arc-path" d="M30,210 C140,210 170,60 380,50" />
+        <circle class="arc-dot" cx="30" cy="210" r="4" />
+        <circle class="arc-dot" cx="380" cy="50" r="4" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Le constat</span>
+        <h2>Vous savez que l'IA peut vous faire gagner du temps. Vous ne savez pas par où commencer.</h2>
+      </div>
+      <div class="problem-body">
+        <p>
+          Entre les outils qui sortent chaque semaine, le temps qu'il faudrait pour les tester et la
+          crainte d'investir dans la mauvaise solution, la plupart des dirigeants de TPE et PME
+          repoussent le sujet, alors même que leurs équipes perdent des heures chaque semaine sur des
+          tâches répétitives.
+        </p>
+        <p>
+          Mon travail&nbsp;: cadrer un besoin précis, écarter le superflu, et livrer un outil qui fonctionne
+          réellement dans votre quotidien, pas une démonstration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="offres">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Offres</span>
+        <h2>Quatre prestations, un objectif&nbsp;: du temps gagné, mesurable.</h2>
+      </div>
+      <div class="offers-grid">
+        <article class="offer-card">
+          <div class="offer-head">
+            <span class="offer-code">JRV</span>
+            <span class="offer-price">à partir de 500 €</span>
+          </div>
+          <h3>Assistant IA sur-mesure pour dirigeant</h3>
+          <p>
+            Un assistant configuré sur vos outils et vos dossiers réels&nbsp;: tri des emails, préparation
+            de réunions, veille. Livré et pris en main en 1 à 2 semaines.
+          </p>
+        </article>
+        <article class="offer-card">
+          <div class="offer-head">
+            <span class="offer-code">DEV</span>
+            <span class="offer-price">à partir de 1 000 €</span>
+          </div>
+          <h3>Création de site web ou d'application</h3>
+          <p>
+            Un site vitrine ou une application métier pensée pour votre usage réel, du brief à la mise
+            en ligne, livré en 2 à 4 semaines.
+          </p>
+        </article>
+        <article class="offer-card">
+          <div class="offer-head">
+            <span class="offer-code">AUT</span>
+            <span class="offer-price">à partir de 500 €</span>
+          </div>
+          <h3>Audit et automatisations simples</h3>
+          <p>
+            Repérage des tâches répétitives de votre activité et mise en place de 2 à 4 automatisations
+            concrètes, sans code à maintenir de votre côté.
+          </p>
+        </article>
+        <article class="offer-card">
+          <div class="offer-head">
+            <span class="offer-code">FRM</span>
+            <span class="offer-price">à partir de 600 €</span>
+          </div>
+          <h3>Formation interne aux outils IA</h3>
+          <p>
+            Une formation pratique sur vos dossiers réels pour que votre équipe utilise ChatGPT ou
+            Claude au quotidien, pas sur des exemples génériques.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="methode">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Méthode</span>
+        <h2>Trois étapes, un prix fixé avant tout engagement.</h2>
+      </div>
+      <div class="method-list">
+        <div class="method-step">
+          <span class="method-num">01</span>
+          <h3>Audit découverte</h3>
+          <p>30 minutes, gratuites, pour comprendre votre situation, vos outils et vos priorités.</p>
+        </div>
+        <div class="method-step">
+          <span class="method-num">02</span>
+          <h3>Proposition chiffrée</h3>
+          <p>Un périmètre écrit noir sur blanc, un prix ferme, un délai. Rien ne démarre sans votre accord.</p>
+        </div>
+        <div class="method-step">
+          <span class="method-num">03</span>
+          <h3>Mise en œuvre</h3>
+          <p>Livraison, prise en main et support inclus pendant les deux semaines suivant la livraison.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="references">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Références</span>
+        <h2>Deux produits conçus et livrés de bout en bout.</h2>
+        <p>Avant de conseiller, je construis. Voici ce que j'ai lancé.</p>
+      </div>
+      <div class="proof-grid">
+        <article class="proof-card">
+          <span class="eyebrow">SaaS en production</span>
+          <h3>LiggeyBis</h3>
+          <p>
+            Application qui aide les commerçants sénégalais à se faire payer à temps&nbsp;: suivi clients,
+            relances WhatsApp automatiques, facturation mobile. Chaque opération prend moins de 30
+            secondes.
+          </p>
+          <a class="proof-link" href="https://liggeybis.com" target="_blank" rel="noopener">liggeybis.com</a>
+        </article>
+        <article class="proof-card">
+          <span class="eyebrow">SaaS en développement</span>
+          <h3>Origines.app</h3>
+          <p>
+            Application qui guide les grands débutants dans leur recherche généalogique à partir d'un
+            test ADN, pensée pour être utilisable sans aucune connaissance préalable.
+          </p>
+          <span class="proof-status">Lancement en préparation</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tarifs">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Tarifs</span>
+        <h2>Un ordre de grandeur, un prix ferme après l'audit.</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-tier">
+          <span class="eyebrow">TPE</span>
+          <span class="price-amount">500 € — 2 000 €</span>
+          <p>1 à 9 salariés. Une prestation ciblée, livrée rapidement.</p>
+        </div>
+        <div class="price-tier is-featured">
+          <span class="eyebrow">PME</span>
+          <span class="price-amount">1 200 € — 5 000 €</span>
+          <p>10 à 249 salariés. Périmètre plus large, plusieurs outils ou une formation d'équipe.</p>
+        </div>
+        <div class="price-tier">
+          <span class="eyebrow">ETI &amp; grands comptes</span>
+          <span class="price-amount">Sur devis</span>
+          <p>250 salariés et plus. Périmètre et accompagnement définis ensemble.</p>
+        </div>
+      </div>
+      <p class="pricing-note">
+        Le prix exact dépend toujours du périmètre défini lors de l'audit découverte, jamais d'une
+        grille figée en ligne.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow">Contact</span>
+        <h2>Parlons de votre besoin.</h2>
+        <p>
+          Décrivez votre situation en quelques lignes. Je réponds sous 48 heures ouvrées pour caler
+          l'audit découverte, sans engagement.
+        </p>
+        <div class="contact-direct">
+          Vous préférez écrire directement ?<br />
+          <a href="mailto:contact@arcens-ia.fr">contact@arcens-ia.fr</a>
+        </div>
+      </div>
+      <form id="contact-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="company">Entreprise</label>
+            <input type="text" id="company" name="company" required autocomplete="organization" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="form-field">
+            <label for="phone">Téléphone (optionnel)</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="need">Type de besoin</label>
+            <select id="need" name="need" required>
+              <option value="">Sélectionner...</option>
+              <option value="Assistant IA sur-mesure">Assistant IA sur-mesure</option>
+              <option value="Site web ou application">Site web ou application</option>
+              <option value="Audit et automatisations">Audit et automatisations</option>
+              <option value="Formation aux outils IA">Formation aux outils IA</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="budget">Budget estimé</label>
+            <select id="budget" name="budget">
+              <option value="">Sélectionner...</option>
+              <option value="Moins de 1000 euros">Moins de 1 000 €</option>
+              <option value="1000 a 3000 euros">1 000 € — 3 000 €</option>
+              <option value="3000 a 5000 euros">3 000 € — 5 000 €</option>
+              <option value="Plus de 5000 euros">Plus de 5 000 €</option>
+              <option value="A definir ensemble">À définir ensemble</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="message">Votre besoin en quelques lignes</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Envoyer la demande</button>
+          <span class="form-status" id="form-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <span>ARCENS IA — Conseil en intelligence artificielle — Toulouse, France</span>
+    <ul class="footer-links">
+      <li><a href="mailto:contact@arcens-ia.fr">contact@arcens-ia.fr</a></li>
+      <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li>Mentions légales&nbsp;: immatriculation en cours</li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById("contact-form");
+    var status = document.getElementById("form-status");
+    if (!form) return;
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      status.dataset.state = "";
+      status.textContent = "Envoi en cours...";
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            status.dataset.state = "ok";
+            status.textContent = "Message envoyé. Réponse sous 48h ouvrées.";
+            form.reset();
+          } else {
+            throw new Error("submit failed");
+          }
+        })
+        .catch(function () {
+          status.dataset.state = "error";
+          status.textContent = "Échec de l'envoi. Écrivez-moi directement à contact@arcens-ia.fr.";
+        });
+    });
+  })();
+</script>
+</body>
+</html>
