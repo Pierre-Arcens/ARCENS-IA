@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Arcens IA — Conseil en intelligence artificielle pour dirigeants de TPE et PME</title>
 <meta name="description" content="Arcens IA accompagne les dirigeants de TPE et PME avec des solutions IA concrètes : assistant sur-mesure, sites et applications, automatisations, formation." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <!--
   À COMPLÉTER AVANT MISE EN LIGNE :
   1. Mentions légales dans le footer une fois le SIRET/immatriculation obtenu
@@ -167,6 +170,9 @@
     padding-block: 1rem;
   }
   .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
     font-weight: 700;
     font-size: 1.15rem;
@@ -175,6 +181,12 @@
     color: var(--text);
   }
   .wordmark span { color: var(--accent-c); }
+  .logo-mark { flex: none; display: block; }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
   .nav-links {
     display: flex;
     gap: 1.75rem;
@@ -419,7 +431,15 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a href="#top" class="wordmark">ARCENS<span>·</span>IA</a>
+    <a href="#top" class="wordmark">
+      <svg class="logo-mark" viewBox="0 0 34 24" width="24" height="17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect x="0"  y="14" width="5" height="9"  fill="var(--accent-c)" rx="2.5" opacity="0.35"/>
+        <rect x="7"  y="8"  width="5" height="15" fill="var(--accent-c)" rx="2.5" opacity="0.55"/>
+        <rect x="14" y="1"  width="5" height="22" fill="var(--accent-c)" rx="2.5"/>
+        <rect x="21" y="6"  width="5" height="17" fill="var(--accent-c)" rx="2.5" opacity="0.65"/>
+        <rect x="28" y="12" width="5" height="11" fill="var(--accent-c)" rx="2.5" opacity="0.4"/>
+      </svg>
+      ARCENS<span>·</span>IA</a>
     <nav>
       <ul class="nav-links">
         <li><a href="#offres">Offres</a></li>
@@ -703,7 +723,16 @@
 
 <footer class="site-footer">
   <div class="wrap footer-grid">
-    <span>ARCENS IA — Conseil en intelligence artificielle — Toulouse, France</span>
+    <span class="footer-brand">
+      <svg class="logo-mark" viewBox="0 0 34 24" width="20" height="14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect x="0"  y="14" width="5" height="9"  fill="var(--accent-c)" rx="2.5" opacity="0.35"/>
+        <rect x="7"  y="8"  width="5" height="15" fill="var(--accent-c)" rx="2.5" opacity="0.55"/>
+        <rect x="14" y="1"  width="5" height="22" fill="var(--accent-c)" rx="2.5"/>
+        <rect x="21" y="6"  width="5" height="17" fill="var(--accent-c)" rx="2.5" opacity="0.65"/>
+        <rect x="28" y="12" width="5" height="11" fill="var(--accent-c)" rx="2.5" opacity="0.4"/>
+      </svg>
+      ARCENS IA — Conseil en intelligence artificielle — Toulouse, France
+    </span>
     <ul class="footer-links">
       <li><a href="mailto:contact@arcens-ia.com">contact@arcens-ia.com</a></li>
       <li><a href="https://www.linkedin.com/in/pierrearcens/" target="_blank" rel="noopener">LinkedIn</a></li>
