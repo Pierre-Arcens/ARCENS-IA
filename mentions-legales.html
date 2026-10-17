@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mentions légales, Arcens IA</title>
+<meta name="description" content="Mentions légales du site arcens-ia.com : éditeur, hébergeur, données personnelles." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink-900: #10181f;
+    --ink-700: #2e3e48;
+    --ink-500: #5b6b74;
+    --paper-000: #f7f9f8;
+    --paper-050: #eef1ef;
+    --paper-100: #e1e6e3;
+    --accent: #1d4e75;
+    --accent-soft: #3e6e99;
+
+    --bg: var(--paper-000);
+    --surface: var(--paper-050);
+    --surface-alt: var(--paper-100);
+    --text: var(--ink-900);
+    --text-soft: var(--ink-700);
+    --text-muted: var(--ink-500);
+    --border: rgba(16, 24, 31, 0.16);
+    --accent-c: var(--accent);
+    --accent-c-soft: var(--accent-soft);
+    --on-accent: #f7f9f8;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10181f;
+      --surface: #182530;
+      --surface-alt: #1f2e3a;
+      --text: #eef1ef;
+      --text-soft: #c3cbc8;
+      --text-muted: #8ca0a8;
+      --border: rgba(238, 241, 239, 0.16);
+      --accent-c: #5b9bd5;
+      --accent-c-soft: #7fb2e0;
+      --on-accent: #10181f;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #10181f;
+    --surface: #182530;
+    --surface-alt: #1f2e3a;
+    --text: #eef1ef;
+    --text-soft: #c3cbc8;
+    --text-muted: #8ca0a8;
+    --border: rgba(238, 241, 239, 0.16);
+    --accent-c: #5b9bd5;
+    --accent-c-soft: #7fb2e0;
+    --on-accent: #10181f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  h1, h2, h3 {
+    font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    text-wrap: balance;
+    color: var(--text);
+    margin: 0;
+  }
+
+  h1 { font-size: clamp(2.25rem, 1.5rem + 3vw, 3.75rem); line-height: 1.08; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.25rem); line-height: 1.15; }
+  h3 { font-size: clamp(1.15rem, 1rem + 0.6vw, 1.375rem); line-height: 1.25; }
+
+  p { margin: 0; color: var(--text-soft); }
+
+  .eyebrow {
+    font-family: "Cascadia Mono", "SF Mono", Consolas, "Courier New", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-c);
+    display: inline-block;
+  }
+
+  a { color: inherit; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.75rem 1.4rem;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .btn-primary {
+    background: var(--accent-c);
+    color: var(--on-accent);
+    border-color: var(--accent-c);
+  }
+  .btn-primary:hover { background: var(--accent-c-soft); border-color: var(--accent-c-soft); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--accent-c); color: var(--accent-c); }
+  .btn:focus-visible {
+    outline: 2px solid var(--accent-c);
+    outline-offset: 2px;
+  }
+  .btn:active { transform: scale(0.98); }
+
+  .skip-link {
+    position: absolute;
+    top: -3rem;
+    left: 1rem;
+    z-index: 50;
+    background: var(--accent-c);
+    color: var(--on-accent);
+    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: top 0.15s ease;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .wordmark span { color: var(--accent-c); }
+  .logo-mark { flex: none; display: block; }
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--accent-c); }
+  @media (max-width: 42rem) {
+    .nav-links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    padding-block: clamp(3rem, 8vw, 6rem) clamp(2.5rem, 6vw, 4rem);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  @media (max-width: 56rem) {
+    .hero { grid-template-columns: 1fr; }
+  }
+  .hero-eyebrow { margin-bottom: 1.25rem; }
+  .hero h1 { margin-bottom: 1.25rem; }
+  .hero-sub {
+    font-size: 1.1rem;
+    max-width: 34rem;
+    margin-bottom: 2rem;
+  }
+  .hero-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+  .hero-figure { position: relative; }
+  .hero-figure svg { width: 100%; height: auto; display: block; }
+  .hero-grid line { stroke: var(--border); stroke-width: 1; }
+  .hero-bars rect {
+    fill: var(--accent-c);
+    transform-box: fill-box;
+    transform-origin: bottom center;
+    transform: scaleY(0);
+    animation: rise-bar 0.7s ease forwards;
+  }
+  .hero-bars rect:nth-child(1) { animation-delay: 0.05s; }
+  .hero-bars rect:nth-child(2) { animation-delay: 0.15s; }
+  .hero-bars rect:nth-child(3) { animation-delay: 0.25s; }
+  .hero-bars rect:nth-child(4) { animation-delay: 0.35s; }
+  .hero-bars rect:nth-child(5) { animation-delay: 0.45s; }
+  @keyframes rise-bar { to { transform: scaleY(1); } }
+
+  /* Sections */
+  .section { padding-block: clamp(3rem, 6vw, 4.5rem); border-top: 1px solid var(--border); }
+  .section-head { max-width: 40rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .section-head .eyebrow { margin-bottom: 0.75rem; }
+  .section-head p { margin-top: 1rem; font-size: 1.05rem; }
+  .section-alt { background: var(--surface); }
+
+  /* Problem */
+  .problem-body { max-width: 42rem; font-size: 1.05rem; }
+  .problem-body p + p { margin-top: 1rem; }
+
+  /* Offers */
+  .offers-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .offer-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    padding-block: 1.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .offer-item:last-child { border-bottom: 1px solid var(--border); }
+  .offer-item h3 { transition: color 0.15s ease; }
+  .offer-item:hover h3 { color: var(--accent-c); }
+  .offer-item p { grid-column: 1 / -1; font-size: 0.96rem; max-width: 42rem; }
+  @media (max-width: 30rem) {
+    .offer-item { grid-template-columns: auto 1fr; }
+    .offer-price { grid-column: 1 / -1; justify-self: start; }
+  }
+  .offer-code {
+    font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.15rem 0.5rem;
+  }
+  .offer-price {
+    font-family: "Cascadia Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.8rem;
+    color: var(--accent-c);
+    white-space: nowrap;
+  }
+
+  /* Method */
+  .method-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .method-step {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding-block: 1.75rem;
+    border-top: 1px solid var(--border);
+  }
+  .method-step:last-child { border-bottom: 1px solid var(--border); }
+  @media (max-width: 36rem) {
+    .method-step { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+  .method-num {
+    font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1;
+    color: var(--accent-c);
+  }
+  .method-step h3 { margin-bottom: 0.5rem; }
+  .method-step p { font-size: 0.95rem; max-width: 34rem; }
+
+  /* Proof */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 42rem) { .proof-grid { grid-template-columns: 1fr; } }
+  .proof-card {
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .proof-card .eyebrow { margin-bottom: 0.6rem; }
+  .proof-card h3 { margin-bottom: 0.6rem; }
+  .proof-card p { font-size: 0.96rem; }
+  .proof-link {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-size: 0.85rem;
+    color: var(--accent-c);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-c);
+  }
+  .proof-status {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-family: "Cascadia Mono", "SF Mono", Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 56rem) { .pricing-grid { grid-template-columns: 1fr; } }
+  .price-tier {
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .price-tier.is-featured { border-color: var(--accent-c); background: var(--surface); }
+  .price-tier .eyebrow { margin-bottom: 0.35rem; }
+  .price-amount {
+    font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+    font-size: 1.6rem;
+    color: var(--text);
+    margin: 0.35rem 0 0.6rem;
+  }
+  .price-tier p { font-size: 0.92rem; }
+  .pricing-note { margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted); max-width: 38rem; }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  @media (max-width: 56rem) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info p { margin-top: 1rem; font-size: 0.98rem; }
+  .contact-direct {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .contact-direct a { color: var(--accent-c); text-decoration: none; border-bottom: 1px solid var(--accent-c); }
+
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 30rem) { .form-row { grid-template-columns: 1fr; } }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field label {
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
+    font-size: 0.98rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.65rem 0.75rem;
+  }
+  .form-field textarea { resize: vertical; min-height: 6rem; }
+  .form-field input:focus-visible,
+  .form-field select:focus-visible,
+  .form-field textarea:focus-visible {
+    outline: 2px solid var(--accent-c);
+    outline-offset: 1px;
+  }
+  .form-submit { display: flex; align-items: center; gap: 1rem; margin-top: 0.25rem; }
+  .form-status { font-size: 0.88rem; }
+  .form-status[data-state="ok"] { color: #4f8f5b; }
+  .form-status[data-state="error"] { color: #b3543f; }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--border); padding-block: 2.5rem; }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .footer-links { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  .footer-links a { text-decoration: none; color: var(--text-muted); }
+  .footer-links a:hover { color: var(--accent-c); }
+  .footer-legal { flex-basis: 100%; font-size: 0.8rem; color: var(--text-muted); }
+  .legal { max-width: 46rem; padding-block: clamp(2.5rem, 5vw, 4rem); }
+  .legal h1 { margin-bottom: 2rem; }
+  .legal h2 { font-size: 1.25rem; margin: 2rem 0 0.5rem; }
+  .legal p, .legal li { margin-top: 0.5rem; }
+  .legal ul { padding-left: 1.25rem; color: var(--text-soft); }
+</style>
+</head>
+<body>
+
+<a href="#top" class="skip-link">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="wordmark">
+      <svg class="logo-mark" viewBox="0 0 34 24" width="24" height="17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect x="0"  y="14" width="5" height="9"  fill="var(--accent-c)" rx="2.5" opacity="0.35"/>
+        <rect x="7"  y="8"  width="5" height="15" fill="var(--accent-c)" rx="2.5" opacity="0.55"/>
+        <rect x="14" y="1"  width="5" height="22" fill="var(--accent-c)" rx="2.5"/>
+        <rect x="21" y="6"  width="5" height="17" fill="var(--accent-c)" rx="2.5" opacity="0.65"/>
+        <rect x="28" y="12" width="5" height="11" fill="var(--accent-c)" rx="2.5" opacity="0.4"/>
+      </svg>
+      ARCENS<span>·</span>IA</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#offres">Offres</a></li>
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="index.html#references">Références</a></li>
+        <li><a href="index.html#tarifs">Tarifs</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#contact" class="btn btn-primary">Audit découverte</a>
+  </div>
+</header>
+
+<main id="top" class="wrap legal">
+  <h1>Mentions légales</h1>
+
+  <h2>Éditeur du site</h2>
+  <p>Le site arcens-ia.com est édité par Pierre Arcens, entrepreneur individuel, exerçant sous le nom commercial ARCENS IA.</p>
+  <ul>
+    <li>Adresse : 6 rue de Vaysse, 31470 Saint-Lys, France</li>
+    <li>SIREN : 980 556 542, SIRET : 980 556 542 00010</li>
+    <li>Code APE : 6202A (conseil en systèmes et logiciels informatiques)</li>
+    <li>TVA non applicable, article 293 B du Code général des impôts</li>
+    <li>Contact : <a href="mailto:contact@arcens-ia.com">contact@arcens-ia.com</a></li>
+  </ul>
+  <p>Directeur de la publication : Pierre Arcens.</p>
+
+  <h2>Hébergement</h2>
+  <p>Le site est hébergé par GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr Street, San Francisco, CA 94107, États-Unis.</p>
+
+  <h2>Propriété intellectuelle</h2>
+  <p>L'ensemble des contenus du site (textes, logos, visuels, mise en page) est la propriété d'ARCENS IA, sauf mention contraire. Toute reproduction ou réutilisation sans autorisation écrite préalable est interdite.</p>
+
+  <h2>Données personnelles</h2>
+  <p>Les informations saisies dans le formulaire de contact (nom, entreprise, email, téléphone, description du besoin) servent uniquement à répondre à votre demande. Elles sont transmises par le service de formulaire Formspree, puis reçues par email par ARCENS IA. Elles ne sont ni revendues ni utilisées à d'autres fins, et sont conservées le temps nécessaire au traitement de votre demande et de la relation commerciale qui peut en découler.</p>
+  <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition sur vos données. Pour l'exercer, écrivez à <a href="mailto:contact@arcens-ia.com">contact@arcens-ia.com</a>. Vous pouvez aussi saisir la CNIL (cnil.fr).</p>
+
+  <h2>Cookies</h2>
+  <p>Ce site n'utilise pas de cookies de suivi ni d'outil de mesure d'audience.</p>
+
+  <p style="margin-top:2.5rem;"><a href="index.html">Retour à l'accueil</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <span class="footer-brand">
+      <svg class="logo-mark" viewBox="0 0 34 24" width="20" height="14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect x="0"  y="14" width="5" height="9"  fill="var(--accent-c)" rx="2.5" opacity="0.35"/>
+        <rect x="7"  y="8"  width="5" height="15" fill="var(--accent-c)" rx="2.5" opacity="0.55"/>
+        <rect x="14" y="1"  width="5" height="22" fill="var(--accent-c)" rx="2.5"/>
+        <rect x="21" y="6"  width="5" height="17" fill="var(--accent-c)" rx="2.5" opacity="0.65"/>
+        <rect x="28" y="12" width="5" height="11" fill="var(--accent-c)" rx="2.5" opacity="0.4"/>
+      </svg>
+      ARCENS IA, conseil en intelligence artificielle, Toulouse, France
+    </span>
+    <ul class="footer-links">
+      <li><a href="mailto:contact@arcens-ia.com">contact@arcens-ia.com</a></li>
+      <li><a href="https://www.linkedin.com/in/pierrearcens/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+    </ul>
+    <p class="footer-legal">Pierre Arcens, entrepreneur individuel · SIRET 980 556 542 00010 · APE 6202A · 6 rue de Vaysse, 31470 Saint-Lys</p>
+  </div>
+</footer>
+</body>
+</html>
