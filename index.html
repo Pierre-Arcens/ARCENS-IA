@@ -327,6 +327,15 @@
     white-space: nowrap;
   }
 
+  /* About teaser */
+  .about-teaser { display: grid; grid-template-columns: 15rem 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+  @media (max-width: 40rem) { .about-teaser { grid-template-columns: 1fr; } }
+  .about-teaser img { width: 100%; max-width: 15rem; height: auto; display: block; border: 1px solid var(--border); }
+  .about-teaser h2 { margin: 0.5rem 0 1rem; }
+  .offer-item h3 a { color: inherit; text-decoration: none; }
+  .offer-item h3 a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+  .offer-item h3 a:focus-visible { outline: 2px solid var(--accent-c); outline-offset: 2px; }
+
   /* Method */
   .method-list {
     display: flex;
@@ -529,8 +538,7 @@
         "Formation aux outils IA"
       ],
       "sameAs": [
-        "https://www.linkedin.com/in/pierrearcens/",
-        "https://liggeybis.com"
+        "https://www.linkedin.com/in/pierrearcens/"
       ]
     },
     {
@@ -538,7 +546,8 @@
       "@id": "https://arcens-ia.com/#pierre-arcens",
       "name": "Pierre Arcens",
       "jobTitle": "Consultant en intelligence artificielle, fondateur d'Arcens IA",
-      "url": "https://arcens-ia.com/",
+      "url": "https://arcens-ia.com/a-propos/",
+      "image": "https://arcens-ia.com/img/pierre-arcens-800.webp",
       "worksFor": {
         "@id": "https://arcens-ia.com/#organization"
       },
@@ -570,6 +579,7 @@
         <li><a href="#offres">Offres</a></li>
         <li><a href="#methode">Méthode</a></li>
         <li><a href="#references">Références</a></li>
+        <li><a href="/a-propos/">À propos</a></li>
         <li><a href="#tarifs">Tarifs</a></li>
       </ul>
     </nav>
@@ -639,7 +649,7 @@
       <div class="offers-list">
         <article class="offer-item">
           <span class="offer-code">JRV</span>
-          <h3>Assistant IA sur-mesure pour dirigeant</h3>
+          <h3><a href="/assistant-ia-dirigeant/">Assistant IA sur-mesure pour dirigeant</a></h3>
           <span class="offer-price">à partir de 400 €</span>
           <p>
             Un assistant configuré sur vos outils et vos dossiers réels&nbsp;: tri des emails, préparation
@@ -648,7 +658,7 @@
         </article>
         <article class="offer-item">
           <span class="offer-code">DEV</span>
-          <h3>Création de site web ou d'application</h3>
+          <h3><a href="/creation-site-web/">Création de site web ou d'application</a></h3>
           <span class="offer-price">à partir de 1 000 €</span>
           <p>
             Un site vitrine ou une application métier pensée pour votre usage réel, du brief à la mise
@@ -657,7 +667,7 @@
         </article>
         <article class="offer-item">
           <span class="offer-code">AUT</span>
-          <h3>Audit et automatisations simples</h3>
+          <h3><a href="/audit-automatisation/">Audit et automatisations simples</a></h3>
           <span class="offer-price">à partir de 400 €</span>
           <p>
             Repérage des tâches répétitives de votre activité et mise en place de 2 à 4 automatisations
@@ -666,7 +676,7 @@
         </article>
         <article class="offer-item">
           <span class="offer-code">FRM</span>
-          <h3>Formation interne aux outils IA</h3>
+          <h3><a href="/formation-ia-entreprise/">Formation interne aux outils IA</a></h3>
           <span class="offer-price">à partir de 600 €</span>
           <p>
             Une formation pratique sur vos dossiers réels pour que votre équipe utilise ChatGPT ou
@@ -708,20 +718,38 @@
     </div>
   </section>
 
+  <section class="section" id="a-propos">
+    <div class="wrap about-teaser">
+      <picture>
+        <img src="/img/pierre-arcens-480.webp" width="480" height="600" loading="lazy" alt="Pierre Arcens, consultant en intelligence artificielle à Toulouse" />
+      </picture>
+      <div>
+        <span class="eyebrow">À propos</span>
+        <h2>Pierre Arcens, depuis 2003 dans l'informatique.</h2>
+        <p>
+          Vendeur informatique, puis technicien : installation, réseau et télécom, bases de données,
+          support. Depuis un an, je me forme en continu à l'IA et je construis mes propres produits,
+          pour aider les dirigeants de TPE et PME à en tirer parti concrètement.
+        </p>
+        <a class="proof-link" href="/a-propos/">Lire mon parcours</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-alt" id="references">
     <div class="wrap">
       <div class="section-head">
-        <h2>Deux produits conçus et livrés de bout en bout.</h2>
-        <p>Avant de conseiller, je construis. Voici ce que j'ai lancé.</p>
+        <h2>Deux produits que j'ai conçus moi-même.</h2>
+        <p>Avant de conseiller, je construis. Voici mes réalisations.</p>
       </div>
       <div class="proof-grid">
         <article class="proof-card">
-          <span class="eyebrow">SaaS en production</span>
+          <span class="eyebrow">SaaS, lancement en préparation</span>
           <h3>LiggeyBis</h3>
           <p>
-            Application qui aide les commerçants sénégalais à se faire payer à temps&nbsp;: suivi clients,
-            relances WhatsApp automatiques, facturation mobile. Chaque opération prend moins de 30
-            secondes.
+            Application pensée pour aider les commerçants sénégalais à se faire payer à temps&nbsp;: suivi
+            clients, relances WhatsApp automatiques, facturation mobile. Conçue pour qu'une opération
+            prenne moins de 30 secondes.
           </p>
           <a class="proof-link" href="https://liggeybis.com" target="_blank" rel="noopener">liggeybis.com</a>
         </article>
@@ -859,6 +887,7 @@
     <ul class="footer-links">
       <li><a href="mailto:contact@arcens-ia.com">contact@arcens-ia.com</a></li>
       <li><a href="https://www.linkedin.com/in/pierrearcens/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="/a-propos/">À propos</a></li>
       <li><a href="mentions-legales.html">Mentions légales</a></li>
     </ul>
     <p class="footer-legal">Pierre Arcens, entrepreneur individuel · SIRET 980 556 542 00010 · APE 6202A · 6 rue de Vaysse, 31470 Saint-Lys</p>

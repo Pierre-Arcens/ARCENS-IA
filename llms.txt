@@ -4,15 +4,13 @@
 
 ## Prestations
 
-- [Assistant IA sur-mesure pour dirigeant](https://arcens-ia.com/#offres) : tri des emails, préparation de réunions, veille. À partir de 400 €.
-- [Création de site web ou d'application](https://arcens-ia.com/#offres) : à partir de 1 000 €.
-- [Audit et automatisations simples](https://arcens-ia.com/#offres) : à partir de 400 €.
-- [Formation interne aux outils IA](https://arcens-ia.com/#offres) : à partir de 600 €.
+- [Assistant IA sur-mesure pour dirigeant](https://arcens-ia.com/assistant-ia-dirigeant/) : tri des emails, préparation de réunions, veille. À partir de 400 €.
+- [Création de site web ou d'application](https://arcens-ia.com/creation-site-web/) : à partir de 1 000 €.
+- [Audit et automatisations simples](https://arcens-ia.com/audit-automatisation/) : à partir de 400 €.
+- [Formation interne aux outils IA](https://arcens-ia.com/formation-ia-entreprise/) : à partir de 600 €.
 
 ## Informations
 
-- [Méthode](https://arcens-ia.com/#methode) : audit découverte gratuit de 30 minutes, proposition chiffrée, mise en oeuvre.
-- [Références](https://arcens-ia.com/#references) : LiggeyBis (https://liggeybis.com), Origines.app (en préparation).
-- [Tarifs](https://arcens-ia.com/#tarifs)
-- [Contact](https://arcens-ia.com/#contact) : contact@arcens-ia.com
+- [À propos de Pierre Arcens](https://arcens-ia.com/a-propos/) : parcours dans l'informatique depuis 2003, puis dans l'IA.
+- [Méthode, tarifs et contact](https://arcens-ia.com/) : audit découverte gratuit de 30 minutes, proposition chiffrée, mise en oeuvre. Contact : contact@arcens-ia.com
 - [Mentions légales](https://arcens-ia.com/mentions-legales.html)
